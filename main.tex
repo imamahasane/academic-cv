@@ -1,0 +1,300 @@
+\documentclass[11pt,a4paper]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{microtype}      
+\usepackage{fontawesome5}
+\usepackage[none]{hyphenat}
+
+
+% ===================== FONTS =====================
+% Compile with XeLaTeX
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+\setmathfont{TeX Gyre Termes Math}
+
+% ===================== COLORS =====================
+\definecolor{Accent}{HTML}{1F4E79}
+\definecolor{SoftGray}{HTML}{555555}
+\definecolor{NameGray}{HTML}{666666}
+\definecolor{AccentRed}{HTML}{C00000}
+
+% ===================== PDF / LINKS =====================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Accent,
+  urlcolor=Accent,
+  citecolor=Accent,
+  pdftitle={Md Imam Ahasan - Academic CV},
+  pdfauthor={Md Imam Ahasan}
+}
+\urlstyle{same} % ATS-friendly: keep URLs in normal font
+
+% ===================== GLOBAL SPACING =====================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\renewcommand{\baselinestretch}{1.04}
+\raggedbottom % prevents big vertical whitespace caused by page-stretching
+\emergencystretch=2em
+
+% ===================== SECTION STYLING =====================
+\titleformat{\section}
+  {\Large\bfseries\sffamily\color{Accent}}
+  {}{0pt}{}
+  [\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% ===================== LISTS (TIGHT + CLEAN) =====================
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=1pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+\setlist[enumerate]{
+  leftmargin=1.4em,
+  itemsep=1pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% ===================== CUSTOM COMMANDS =====================
+\newcommand{\CVName}[1]{\Huge\bfseries\sffamily #1}
+\newcommand{\CVLine}[1]{{\small\color{SoftGray}#1}}
+
+% Simple entry: Title (left) | Right-side text
+\newcommand{\EntryHeading}[3]{%
+  \textbf{#1}\hfill \textbf{#2}\\
+  \textit{#3}\\
+}
+
+% Two-line entry: Left title / right title, then left subtitle / right subtitle
+\newcommand{\EntryHeadingTwo}[4]{%
+  \textbf{#1}\hfill \textbf{#2}\\
+  \textit{#3}\hfill \textit{#4}\\
+}
+
+% Optional: 3-line entry (useful for Education with GPA as 3rd line)
+\newcommand{\EntryHeadingThree}[5]{%
+  \textbf{#1}\hfill \textbf{#2}\\
+  \textit{#3}\hfill \textit{#4}\\
+  {\small\color{SoftGray}#5}\\
+}
+
+% Publications item (compact)
+\newcommand{\PubItem}[2]{%
+  \item #1\\[-1pt]{\small #2}
+}
+
+\newcommand{\TightVspace}{\vspace{-2pt}}
+
+% ---------- Document ----------
+\begin{document}
+
+% ===================== HEADER =====================
+
+% ---------- Optional: refine colors (in your preamble) ----------
+\definecolor{NameGray}{HTML}{666666}
+\definecolor{AccentRed}{HTML}{C00000} % close to your screenshot red
+
+% ---------- Replace your current HEADER block with this ----------
+\begin{center}
+  % Name (first part light gray, last name bold black)
+  {\fontsize{36}{40}\selectfont\sffamily
+    \textcolor{NameGray}{Md Imam }\textbf{\textcolor{black}{Ahasan}}
+  }\par
+
+  \vspace{2pt}
+
+  % Address (italic gray)
+  {\small\itshape\color{SoftGray}
+    Chongqing University, Huxi Campus, Daxuecheng West Road, Shapingba District, Chongqing 401331, China
+  }\par
+
+  \vspace{2pt}
+
+  {\small\sffamily\color{SoftGray}
+    \faPhone\ (+86)\,13008309195 \quad|\quad
+    \faEnvelope\ \href{mailto:emamahasane@gmail.com}{emamahasane@gmail.com} \quad|\quad
+    \faGithub\ \href{https://github.com/imamahasane}{imamahasane} \quad|\quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/imamahasane/}{imamahasane}
+  }\par
+\end{center}
+
+% ===================== RESEARCH INTERESTS =====================
+\section*{Research Interests}
+Medical Imaging and Computer Vision \quad\textbullet\quad
+Image Reconstruction and Enhancement \quad\textbullet\quad
+Generalizable Deep Learning \quad\textbullet\quad
+Computer-Aided Diagnosis \quad\textbullet\quad
+Trustworthy and Robust AI \quad\textbullet\quad
+Limited-Supervision Learning
+
+% \section*{Research Interests}
+% Computational Medical Imaging \quad\textbullet\quad
+% Image Reconstruction and Enhancement \quad\textbullet\quad
+% Generalizable and Data-Efficient Learning \quad\textbullet\quad
+% Trustworthy AI for Clinical Applications \quad\textbullet\quad
+% Limited-Supervision Learning
+
+% ===================== EDUCATION =====================
+\section*{Education}
+\EntryHeadingTwo
+  {Chongqing University (CQU)}{Chongqing, China}
+  {M.Sc.\ in Computer Science}{Sep 2023 - Expected Jun 2026}
+  {GPA: 83.4 / 100}  
+\TightVspace
+
+\EntryHeadingTwo
+  {Daffodil International University (DIU)}{Dhaka, Bangladesh}
+  {B.Sc.\ in Computer Science and Engineering}{Sep 2017 -- Sep 2021}
+  {GPA: 71.5 / 100} 
+
+% ===================== PUBLICATIONS =====================
+\section*{Publications}
+
+\textbf{Peer-Reviewed Conference Papers}
+\begin{itemize}[leftmargin=1.2em]
+  \item A.\ F.\ M.\ Abdun Noor, \textbf{Md Imam Ahasan}*, Mohammad Azam Khan, Guangchao Yang.
+  \emph{GeGLUNet: Structural Retinal Vessel Segmentation via Attention-Gated GeGLU and Contrastive Supervision}
+  - Conference on Pattern Recognition and Computer Vision (PRCV 2025). \href{https://doi.org/10.1007/978-981-95-5631-1_35}{DOI: 10.1007/978-981-95-5631-1\_35}
+\end{itemize}
+
+\textbf{Journal Articles (Under Review)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Md Imam Ahasan}, Guangchao Yang, A.\ F.\ M.\ Abdun Noor, Mohammad Azam Khan*.
+  \emph{LightGAN-LD: A Lightweight Generative Adversarial Network for Efficient Low-Dose CT Reconstruction with Sinogram Encoding and Edge-Aware Learning} - PeerJ Computer Science.
+
+  \item \textbf{Md Imam Ahasan}, Guangchao Yang, A.\ F.\ M.\ Abdun Noor, S.\ M.\ Hasan Mahmud*.
+  \emph{GenDiff: A Dose and Anatomy Aware Diffusion Model with Structural Prior Refinement for Low-Dose CT Reconstruction and Generalization} - Scientific Reports (Nature Portfolio).
+\end{itemize}
+
+\textbf{Conference Papers (Under Review)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Md Imam Ahasan}, Guangchao Yang*, A.\ F.\ M.\ Abdun Noor, Mohammad Azam Khan.
+  \emph{Physics-Conditioned Bayesian Diffusion Model for Low-Dose CT Reconstruction} - International Conference on Pattern Recognition (ICPR 2026).
+
+  \item \textbf{Md Imam Ahasan}, Guangchao Yang*, A.\ F.\ M.\ Abdun Noor, S.\ M.\ Hasan Mahmud.
+  \emph{Dose-Aware Cold Diffusion with Physics Consistency for Generalizable Low-Dose CT Reconstruction} - International Joint Conference on Neural Networks (IJCNN 2026).
+
+  \item Anum Malik, A.\ F.\ M.\ Abdun Noor, \textbf{Md Imam Ahasan}*, Mahnoor Buriro.
+  \emph{MoSSGate: Memory-Modulated State-Space Gating for Efficient Skin Lesion Segmentation} - International Joint Conference on Neural Networks (IJCNN 2026).
+
+  \item Ahtisham Waheed, Yunfei Yin*, A.\ F.\ M.\ Abdun Noor, \textbf{Md Imam Ahasan}.
+  \emph{Direction-Curvature Aware Feature Integration for Robust Lane Detection} - International Joint Conference on Neural Networks (IJCNN 2026).
+
+  \item Md Mahfuzur Rahman, Pengzhan Zhou, A.\ F.\ M.\ Abdun Noor, \textbf{Md Imam Ahasan}*.
+  \emph{MTF-Net: Multi-Modal Temporal Feature Fusion Network for Pedestrian Intention Prediction} - International Joint Conference on Neural Networks (IJCNN 2026).
+\end{itemize}
+
+\textbf{Manuscript in Preparation}
+\begin{itemize}[leftmargin=1.2em]
+  \item A.\ F.\ M.\ Abdun Noor, \textbf{Md Imam Ahasan}, S.\ M.\ Hasan Mahmud*.
+  \emph{A Joint Segmentation-Classification Framework for Mammography Using a Bi-Context Location-Aware U-Net} - Scientific Reports (Nature Portfolio).
+\end{itemize}
+
+% ===================== RESEARCH EXPERIENCE =====================
+\section*{Research Experience}
+
+\EntryHeadingTwo
+  {Lab Assistant, Computer Vision Lab}{Chongqing University}
+  {Chongqing, China}{Sep 2024 -- Present}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.2em]
+  \item Developed diffusion based frameworks for LDCT reconstruction, integrating physics guided constraints and forward operator consistency into generative models, and conducted large-scale evaluation on clinical and public datasets using quantitative metrics to improve reconstruction robustness and structural fidelity.
+\end{itemize}
+
+\vspace{-2pt}
+
+\EntryHeadingTwo
+  {Lab Assistant, Data Science Lab}{Daffodil International University}
+  {Dhaka, Bangladesh}{Jun 2020 -- Jul 2021}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.2em]
+  \item Implemented DL models for medical image classification and segmentation, building end-to-end experimental pipelines including preprocessing, training, hyperparameter tuning, and quantitative evaluation across multiple datasets.
+\end{itemize}
+
+% ===================== TECHNICAL SKILLS =====================
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages} & Python \\
+\textbf{Frameworks} & PyTorch, MONAI, scikit-learn \\
+\textbf{Computer Vision} & Classification, segmentation, generative models, inverse problems \\
+\textbf{Tools} & Git, Linux, LaTeX, experiment tracking (W\&B) \\
+\end{tabularx}
+
+% ===================== TEACHING / INDUSTRY EXPERIENCE =====================
+\section*{Teaching \& Professional Experience}
+\EntryHeadingTwo
+  {Senior IT Support Engineer}{Surma Garments Ltd.}
+  {Dhaka, Bangladesh}{Aug 2022 -- Jun 2023}
+
+\vspace{-10pt}
+
+\EntryHeadingTwo
+  {Lecturer, (ICT)}{Anupama International School and College}
+  {Dhaka, Bangladesh}{Dec 2021 -- Jun 2022}
+\vspace{-14pt}
+
+% ===================== AWARDS / LEADERSHIP =====================
+\section*{Awards, Leadership \& Community}
+
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+\textbf{3\textsuperscript{rd} Prize}, ``China in My Eyes'' Contest & Oct 2024 \\
+\textbf{Finalist}, Joy Bangla Youth Award & Aug 2021 \\
+Best Club Performance Award, Daffodil International University & Feb 2019 \\
+\textbf{Co-Founder}, Shopner Khoje Foundation (Charity Organization) & Feb 2017 -- Present \\
+\textbf{Joint Secretary}, DIU Voluntary Service Club & Jan 2021 -- Jun 2021 \\
+\textbf{Executive Member}, DIU Computer and Programming Club & Apr 2018 -- Nov 2018 \\
+\end{tabularx}
+
+% ===================== SERVICE / VOLUNTEERING =====================
+\section*{Service \& Volunteering}
+\EntryHeadingTwo
+  {Volunteer}{Chongqing, China}
+  {IEEE International Conference on Electrical Energy Conversion Systems and Control}{May 2025}
+
+\vspace{-8pt}
+
+\EntryHeadingTwo
+  {Volunteer}{Chongqing, China}
+  {6th International Conference on Electronic Engineering and Informatics}{Jun 2024}
+\vspace{-14pt}
+
+% ===================== REFERENCES =====================
+\section*{References}
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Dr. Guangchao Yang}\\
+College of Computer Science\\
+Chongqing University, Chongqing, China.\\
+Email: \href{mailto:gchao\_yang@cqu.edu.cn}{gchao\_yang@cqu.edu.cn}\\
+Phone: +86 15923504788
+\end{minipage}
+
+&
+
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Dr. Mohammad Azam Khan}\\
+Kim Jaechul Graduate School of AI,\\
+Korea Advanced Institute of Science and Technology.\\
+Email: \href{mailto:azamkhan@kaist.ac.kr}{azamkhan@kaist.ac.kr}
+\end{minipage}
+\end{tabularx}
+
+
+\end{document}
